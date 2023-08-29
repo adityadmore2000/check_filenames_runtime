@@ -77,9 +77,11 @@ if __name__ == "__main__":
                 subprocess.run(["python", __file__])
                 exit()
             search_query = convert_input(input_query)
-            autocomplete_options = file_trie.search(search_query)
-            if autocomplete_options:
-                print("Autocomplete options:", autocomplete_options)
+            _1920_autocomplete_options = file_trie.search("1920-"+search_query)
+            _2400_autocomplete_options=file_trie.search("2400-"+search_query)
+            
+            if _1920_autocomplete_options or _2400_autocomplete_options:
+                print("Autocomplete options:", _1920_autocomplete_options)
             else:
                 print("No autocomplete options found.")
 
